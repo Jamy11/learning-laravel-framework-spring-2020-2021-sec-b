@@ -4,12 +4,9 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>Welcome home! {{ $name }} </h1>
-    <a href="/create">Create user</a> |
+    <h1>Welcome home! {{ session('username') }} </h1>
+    <a href="/home/create">Create user</a> |
     <a href="/home/userlist">View user list</a> |
     <a href="/logout">logout</a>
-    <br>
-    {{$id}}
-
 </body>
 </html>
