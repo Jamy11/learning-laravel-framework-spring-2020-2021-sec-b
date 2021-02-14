@@ -16,7 +16,14 @@ class LoginController extends Controller
            $req->session()->flash('msg', 'null username or password...');
            return redirect('/login');
 
-        }elseif($req->username == $req->password){
+        }
+        elseif($req->username == 'admin' && $req->password == "admin")
+        {
+            $req->session()->put('username', $req->username);
+            $req->session()->put('type', 'admin');
+            return redirect('/home');
+        }
+        elseif($req->username == $req->password){
             //$req->session()->put('password', $req->password);
             //$req->session()->get('name');
             //$req->session()->forget('name');
@@ -32,6 +39,7 @@ class LoginController extends Controller
             //$req->session()->pull('name');
 
             $req->session()->put('username', $req->username);
+            $req->session()->put('type', 'user');
             return redirect('/home');
         }else{
 
