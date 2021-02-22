@@ -20,18 +20,21 @@
             <td>NAME</td>
             <td>EMAIL</td>
             <td>PASSWORD</td>
+            <td>Type</td>
             <td>Action</td>
         </tr>
 
         @for($i=0; $i < count($list); $i++)
         <tr>
             <td>{{ $list[$i]['id'] }}</td>
-            <td>{{ $list[$i]['name'] }}</td>
+            <td>{{ $list[$i]['username'] }}</td>
             <td>{{ $list[$i]['email'] }}</td>
             <td>{{ $list[$i]['password'] }}</td>
+            <td>{{ $list[$i]['type'] }}</td>
             <td>
                 <a href="/home/edit/{{ $list[$i]['id'] }}">Edit</a> |
-                <a href="/home/delete/{{ $list[$i]['id'] }}">Delete</a>
+                <a href="/home/delete/{{ $list[$i]['id'] }}">Delete</a> |
+                <a href="/home/details/{{ $list[$i]['id'] }}">Details</a>
             </td>
         </tr>
         @endfor

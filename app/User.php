@@ -11,7 +11,8 @@ class User extends Model
 
     protected $table =null;
     public $timestamps = false;
-    protected $primarykey = 'id';
+ 
+    //protected $primaryKey = 'id';
 
     // const CREATED_AT = null;
     // const UPDATED_AT = null;

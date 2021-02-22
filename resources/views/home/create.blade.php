@@ -27,6 +27,14 @@
 					<td><input type="text" name="email"></td>
 				</tr>
 				<tr>
+					<td>
+						<select name='type'>
+							<option value="admin"> ADMIN </option>
+							<option value="user"> USER </option>
+						</select>
+					</td>
+				</tr>
+				<tr>
 					<td></td>
 					<td><input type="submit" name="submit" value="Save"></td>
 				</tr>
