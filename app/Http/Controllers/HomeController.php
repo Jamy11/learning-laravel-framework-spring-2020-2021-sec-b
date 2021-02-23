@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Psy\Command\DumpCommand;
 use App\User;
+use Dotenv\Validator as DotenvValidator;
+use Illuminate\Contracts\Validation\Validator as ValidationValidator;
+use Illuminate\Validation\Validator as IlluminateValidationValidator;
+use Validator;
+use App\Http\Requests\UserRequest;
 
 class HomeController extends Controller
 {
@@ -36,7 +41,32 @@ class HomeController extends Controller
         return view('home.create');
     }
 
-    public function store(Request $req){
+    public function store(UserRequest $req){
+
+        // 1st way
+        // $validation=Validator::make($req->all(),
+        // ['username' => 'required|max:5',
+        // 'password' =>'required']    
+        // );
+        
+        // if($validation->fails())
+        // {
+        //     return back()->with('errors',$validation->errors())->withInput();
+        // }
+
+        // 2nd way
+        // $validation = $req->validate([
+        //     'username' => 'required|max:5',
+        //     'password' =>'required']);
+
+
+        $validation->validate();
+
+        // 3rd way
+        // $this->validate($req, [
+        //     'username' => 'required|max:5',
+        //     'password' => 'required|min:6'
+        // ])->validate();
 
         $user = new User();
 
@@ -47,7 +77,7 @@ class HomeController extends Controller
         
         $user->save();
 
-        return redirect('home/userlist');
+        return redirect()->route('home.userlist');
     }
 
     public function edit($id){
@@ -68,7 +98,7 @@ class HomeController extends Controller
 
         $user->save();
         
-        return redirect('/home/userlist');
+        return redirect()->route('home.userlist');
     }
 
     public function userlist(){

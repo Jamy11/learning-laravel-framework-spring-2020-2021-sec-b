@@ -33,11 +33,11 @@ Route::group(['middleware'=>'sess'],function(){
     });
     //Route::get('/home', ['uses'=>'HomeController@index']);
 
-    Route::get('/home/create', 'HomeController@create');
+    Route::get('/home/create', 'HomeController@create')->name('home.create');
     Route::post('/home/create', 'HomeController@store');
 
 
-    Route::get('/home/edit/{id}', 'HomeController@edit');
+    Route::get('/user/edit/{id}', 'HomeController@edit')->name('home.edit');
     Route::post('/home/edit/{id}', 'HomeController@update');
 
     Route::get('/home/delete/{id}', 'HomeController@delete');
@@ -46,7 +46,7 @@ Route::group(['middleware'=>'sess'],function(){
     Route::get('/home', 'HomeController@index')->middleware('sess');
  
 
-    Route::get('/home/userlist', 'HomeController@userlist');
+    Route::get('/user/userlist', 'HomeController@userlist')->name('home.userlist');
 
     Route::get('/home/details/{id}', 'HomeController@show');
 
