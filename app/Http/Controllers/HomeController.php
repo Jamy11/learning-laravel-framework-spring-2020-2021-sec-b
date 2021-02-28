@@ -60,7 +60,7 @@ class HomeController extends Controller
         //     'password' =>'required']);
 
 
-        $validation->validate();
+        //$validation->validate();
 
         // 3rd way
         // $this->validate($req, [
