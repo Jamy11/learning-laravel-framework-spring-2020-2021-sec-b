@@ -22,6 +22,10 @@ Route::post('/login', 'LoginController@verify')->name('login.verify');
 
 Route::get('/logout', 'LogoutController@index');
 
+
+Route::get('/registration','AllController@registration');
+Route::post('/registration','AllController@registrationVerify');
+
 Route::group(['middleware'=>'sess'],function(){
 
     Route::group(['middleware'=>'admin'],function(){

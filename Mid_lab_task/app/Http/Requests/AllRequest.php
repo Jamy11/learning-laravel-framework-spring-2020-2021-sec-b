@@ -25,7 +25,7 @@ class AllRequest extends FormRequest
     {
         return [
             'email' => 'required|email:rfc|max:50|bail',
-            'password' =>'required|max:20|min:5|regex:/[a-zA-Z0-9]/i|bail'
+            'password' =>'required|max:20|min:8|regex:/[a-zA-Z0-9]/i|bail'
         ];
     }
 }
