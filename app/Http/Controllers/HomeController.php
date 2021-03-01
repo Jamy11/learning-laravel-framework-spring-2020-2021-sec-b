@@ -13,6 +13,10 @@ use App\Http\Requests\UserRequest;
 
 class HomeController extends Controller
 {
+    public function view()
+    {
+        return view('index');
+    }
     public function index( Request $req){
 
         $name = "alamin";

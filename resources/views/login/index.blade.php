@@ -12,8 +12,8 @@
 			<legend>Login</legend>
 			<table>
 				<tr>
-					<td>Username</td>
-					<td><input type="text" name="username"></td>
+					<td>Email</td>
+					<td><input type="text" name="email"></td>
 				</tr>
 				<tr>
 					<td>Password</td>
@@ -28,6 +28,9 @@
 	</form>
 
     {{session('msg')}}
-
+	
+	@foreach($errors->all() as $err)
+		{{$err}} <br>
+	@endforeach
 </body>
 </html>

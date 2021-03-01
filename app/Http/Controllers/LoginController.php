@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
+use App\All;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Requests\AllRequest;
 
 class LoginController extends Controller
 {
@@ -13,33 +14,19 @@ class LoginController extends Controller
         return view('login.index');
     }
 
-    public function verify(Request $req){
+    public function verify(AllRequest $req){
 
-        //eloquent orm
-        // $user = User::where('password', $req->password)
-        //                     ->where('username', $req->username)
-        //                     ->get();
-
-        // query builder
-        $user = DB::table('users')
+       
+        $user = DB::table('alls')
                         ->where('password', $req->password)
-                        ->where('username', $req->username)
+                        ->where('email', $req->email)
                         ->get();
 
         //print_r($user[0]);
 
 
-        if($req->username == "" || $req->password == ""){
-           $req->session()->flash('msg', 'null username or password...');
-           return redirect('/login');
-
-        }
-        // elseif($req->username == 'admin' && $req->password == "admin")
-        // {
-        //     $req->session()->put('username', $req->username);
-        //     return redirect('/home');
-        // }
-        elseif($req->username !='' && $req->password != '' && count($user)>0){
+       
+        if(count($user)>0){
             //$req->session()->put('password', $req->password);
             //$req->session()->get('name');
             //$req->session()->forget('name');
@@ -54,7 +41,7 @@ class LoginController extends Controller
             //$req->session()->reflash();
             //$req->session()->pull('name');
 
-            $req->session()->put('username', $req->username);
+            $req->session()->put('email', $req->email);
             return redirect('/home');
         }else{
 

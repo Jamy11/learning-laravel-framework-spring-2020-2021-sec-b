@@ -14,10 +14,7 @@
 //use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    //return view('jam');
-    echo "welcome";
-});
+Route::get('/', 'HomeController@view');
 
 
 Route::get('/login', 'LoginController@index')->name('login.index');
@@ -50,6 +47,8 @@ Route::group(['middleware'=>'sess'],function(){
 
     Route::get('/home/details/{id}', 'HomeController@show');
 
+
+    Route::resource('/product','ProductController');
    
 });
 
