@@ -50,6 +50,8 @@ Route::group(['middleware'=>'sess'],function(){
 
     Route::get('/home/details/{id}', 'HomeController@show');
 
+
+    Route::resource('/product','ProductController');
    
 });
 
