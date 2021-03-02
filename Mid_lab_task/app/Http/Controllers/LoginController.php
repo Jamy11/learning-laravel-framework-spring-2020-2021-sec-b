@@ -7,6 +7,7 @@ use App\All;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\AllRequest;
 
+
 class LoginController extends Controller
 {
     public function index(){
@@ -41,8 +42,10 @@ class LoginController extends Controller
             //$req->session()->reflash();
             //$req->session()->pull('name');
 
+            //$all = All::where('email',$req->email)->first();
             $req->session()->put('email', $req->email);
             return redirect('/home');
+    
         }else{
 
             //$req->session()->flash('msg', 'Invalid username or password...');

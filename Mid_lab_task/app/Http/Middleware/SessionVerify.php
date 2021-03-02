@@ -15,7 +15,7 @@ class SessionVerify
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('username'))
+        if($request->session()->has('email'))
         {
             return $next($request);
         }
@@ -24,6 +24,5 @@ class SessionVerify
             $request->session()->flash('msg','Invalid req ... login first.');
             return redirect('/login');
         }
-        
     }
 }

@@ -6,10 +6,10 @@
 
 @section('page-info')
     <h1>Welcome home! <br>
-        User Email : {{ session('email') }} </h1>
-    <h2>User Type: <span style="color: red"> {{ session('type') }}</span>  </h2>
-    <a href="{{route('home.create')}}">Create user</a> |
-    <a href="{{route('home.userlist')}}">View user list</a> |
+        User Name : <span style="color: blue"> {{ $all['full_name'] }} </span> </h1>
+    <h2>User Role: <span style="color: red"> {{ $all['role'] }}</span>  </h2>
+    <a href="">Create user</a> |
+    <a href="">View user list</a> |
     <a href="/logout">logout</a>
     <br>
     <h1 style="color: red ">

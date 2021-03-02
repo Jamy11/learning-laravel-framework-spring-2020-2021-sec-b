@@ -21,7 +21,7 @@
 				</tr>
 				<tr>
 					<td><input type="submit" name="submit" value="Submit"></td>
-					<td></td>
+					<td><a href="/">Back</a></td>
 				</tr>
 			</table>
 		</fieldset>

@@ -14,7 +14,7 @@
             Company Name: <input type="text" id="companyname" name="company_name"><br><br>
             Phone Number: <input type="text" id="phonenumber" name="phone"><br><br>
             City: <input type="text" id="city" name="city"><br><br>
-            <input type="submit" name="submit" value="Register"> <a href="/login">Login</a>
+            <input type="submit" name="submit" value="Register"> <a href="/login">Login</a> | <a href="/">Back</a>
 
         </form>
 
