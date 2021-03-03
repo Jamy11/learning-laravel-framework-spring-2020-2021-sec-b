@@ -16,16 +16,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@view');
 
-Route::get('/home', 'HomeController@index')->middleware('sess');
-
 Route::get('/login', 'LoginController@index')->name('login.index');
 Route::post('/login', 'LoginController@verify')->name('login.verify');
 
 Route::get('/logout', 'LogoutController@index');
 
-
 Route::get('/registration','AllController@registration');
 Route::post('/registration','AllController@registrationVerify');
+
+Route::group(['middleware'=>'sess'],function(){
+
+    Route::get('/home', 'HomeController@index')->middleware('sess');
+    Route::get('/system/sales/physical_store', 'Physical_store_channelController@physicalStoreView');
+    Route::get('/system/sales/social_media', 'Physical_store_channelController@socialMediaView');
+    Route::get('/system/sales/ecommerce', 'Physical_store_channelController@ecommerceView');
+});
+
 
 // Route::group(['middleware'=>'sess'],function(){
 

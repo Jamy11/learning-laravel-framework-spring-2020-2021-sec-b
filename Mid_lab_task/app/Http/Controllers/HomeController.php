@@ -24,10 +24,11 @@ class HomeController extends Controller
 
     }
     
-    // public function view()
-    // {
-    //     return view('index');
-    // }
+    public function view()
+    {
+        return view('index');
+    }
+
 
     // public function create(){
     //     return view('home.create');

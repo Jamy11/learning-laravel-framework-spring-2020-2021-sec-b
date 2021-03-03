@@ -10,6 +10,8 @@ use App\Http\Requests\RegisterRequest;
 
 use App\All;
 
+use App\Physical_store_channel;
+
 class AllController extends Controller
 {
     //
@@ -38,4 +40,6 @@ class AllController extends Controller
         return redirect('/login');
         //echo 'hello';
     }
+
+
 }
