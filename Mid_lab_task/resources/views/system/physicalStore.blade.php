@@ -6,6 +6,9 @@
 
 @section('page-info')
     <center><h1>Physical-Store</h1></center>
+    <h1>Avg price {{$avg}}</h1>
+    <h2>item list {{$items}}</h2>
+    <h2>LAst seven days sell{{$seven}}</h2>
     <table border="1">
         <tr>
             <td>Id</td>
