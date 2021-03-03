@@ -27,9 +27,15 @@ Route::post('/registration','AllController@registrationVerify');
 Route::group(['middleware'=>'sess'],function(){
 
     Route::get('/home', 'HomeController@index')->middleware('sess');
+
     Route::get('/system/sales/physical_store', 'Physical_store_channelController@physicalStoreView');
     Route::get('/system/sales/social_media', 'Physical_store_channelController@socialMediaView');
     Route::get('/system/sales/ecommerce', 'Physical_store_channelController@ecommerceView');
+
+    Route::get('system/product_management/existing_products', 'productController@existingProductsView');
+    Route::get('system/product_management/upcoming_products', 'productController@upcomingProductsView');
+    Route::get('system/product_management/add_product', 'productController@addProductView');
+
 });
 
 

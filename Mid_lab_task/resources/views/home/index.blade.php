@@ -11,9 +11,15 @@
     <a href="system/sales/physical_store">Physical Store</a> |
     <a href="system/sales/social_media">Social Media</a> |
     <a href="system/sales/ecommerce">Ecommerce Web App</a> |
+
+    <a href="system/product_management/existing_products">Existing Products</a> |
+    <a href="system/product_management/upcoming_products">Upcoming Products</a> |
+    <a href="system/product_management/add_product">Add Product</a> |
     <a href="/logout">logout</a>
     <br>
+
     <h1 style="color: red ">
         {{session('msg')}}
     </h1>
+    
 @endsection
