@@ -14,7 +14,7 @@ class productController extends Controller
     public function existingProductsView()
     {
         $existing  = product::where('status', 'existing')->get();
-        return view('product.existing')->with('existing',count($existing));
+        return view('product.existing')->with('existing',count($existing))->with('exist',$existing);
         //print_r(count($existing));
     }
 
