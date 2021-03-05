@@ -46,7 +46,7 @@ Route::group(['middleware'=>'sess'],function(){
 
     Route::get('/system/product_management/delete/existing_products/{id}','ProductController@exDelete')->name('product.exDelete');
     Route::post('/system/product_management/delete/existing_products/{id}','ProductController@exDestroy');
-    
+
     Route::get('/system/product_management/details/existing_products/{id}','ProductController@exShow')->name('product.exShow');
 
     
@@ -64,6 +64,7 @@ Route::group(['middleware'=>'sess'],function(){
 
 
     Route::get('system/product_management/add_product', 'productController@addProductView');
+    Route::post('system/product_management/add_product', 'productController@store');
 
     
 

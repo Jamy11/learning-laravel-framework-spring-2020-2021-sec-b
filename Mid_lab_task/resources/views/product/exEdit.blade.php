@@ -20,9 +20,9 @@
                 <td>
                 <td>
                 <select name='category'>
-                    <option value="Grocery" > GROCERY </option>
-                    <option value="Medical"   > MEDICAL </option>
-                    <option value="Stationary" > STATIONARY </option>
+                    <option value="Laptop"> Laptop </option>
+                    <option value="Game"> Game </option>
+                    <option value="PC"> PC </option>
                 </select>
                 </td>
                 </td>

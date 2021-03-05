@@ -7,7 +7,7 @@
 @section('page-info')
     <center><h1>Physical-Store</h1></center>
     <h1>Avg price {{$avg}}</h1>
-    <h2>Item list {{$items}}</h2>
+    
     <h2>Last seven days sell {{$seven}}</h2>
     <h2>Best selling item {{$max_item}}</h2>
 

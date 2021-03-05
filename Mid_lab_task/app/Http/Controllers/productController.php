@@ -120,4 +120,18 @@ class productController extends Controller
     {
         return view('product.add');
     }
+
+    public function store(ProductRequest $req){
+
+        $store = new product();
+        
+        $store->product_name = $req->product_name;
+        $store->category     = $req->category;
+        $store->unit_price   = $req->unit_price;
+        $store->status       = $req->status;
+
+        $store->save();
+
+        return redirect('/home');
+    }
 }
