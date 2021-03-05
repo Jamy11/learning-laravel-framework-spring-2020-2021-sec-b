@@ -1,17 +1,12 @@
 @extends('layout.main')
 
 @section('title')
-    Physical-Store
+    Sales Log
 @endsection
 
 @section('page-info')
-    <center><h1>Physical-Store</h1></center>
-    <h1>Avg price {{$avg}}</h1>
-    <h2>Item list {{$items}}</h2>
-    <h2>Last seven days sell {{$seven}}</h2>
-    <h2>Best selling item {{$max_item}}</h2>
+    <center><h1>Sales Log</h1></center>
 
-    <a href="/system/sales/physical_store/sales_log"><button>Sales Log</button></a>
     <center>
         <h2>Last 7 days sells</h2>
         <table border="1">
@@ -32,9 +27,9 @@
                 <td>Updated At</td>
             </tr>
             
-                @foreach ($item as $it)
+                @foreach ($data as $it)
                 <tr>
-                    <td>{{$it['id']}}</td>
+                    <td>{{$it['']}}</td>
                     <td>{{$it['customer_name']}}</td>
                     <td>{{$it['address']}}</td>
                     <td>{{$it['phone']}}</td>
@@ -52,22 +47,13 @@
                 @endforeach
         </table>
     </center>
-    <center><h1>Sell Product</h1></center>
-    <form action="">
-        Coustomern name : <input type="text" name="" > <br> <br>
-        Adress : <input type="text" name="" > <br> <br>
-        Phone : <input type="text" name="" > <br> <br>
-        Product Id : <input type="text" name="" > <br> <br>
-        Product Name : <input type="text" name="" > <br> <br>
-        Unit Price : <input type="text" name="" > <br> <br>
-        Quantity : <input type="text" name="" > <br> <br>
-        Total Price : <input type="text" name="" > <br> <br>
-        Date Sold : <input type="text" name="" > <br> <br>
-        Payment Type : <input type="text" name="" > <br> <br>
-        Status : <input type="text" name="" > <br> <br>
-        <input type="Submit" name="" value="Submit">
-    </form>
+    <center>
+        <br> <br>
+        <h2>How you want to download</h2>
     
-    
+        <a href="/downloadpdf"><button>Download as pdf</button></a>  | 
+        <a href="/downloadexcel"><button>Download as Excel</button></a>
+        <a href="/uploadexcelview"><button>Upload Excel File</button></a>
+    </center>
     
 @endsection

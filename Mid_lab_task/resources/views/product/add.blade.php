@@ -5,5 +5,5 @@
 @endsection
 
 @section('page-info')
-    <center><h1>Social Media</h1></center>
+    <center><h1>Add Product</h1></center>
 @endsection
