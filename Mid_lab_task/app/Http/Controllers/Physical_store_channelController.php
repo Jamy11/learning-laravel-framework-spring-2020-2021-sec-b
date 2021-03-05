@@ -28,16 +28,35 @@ class Physical_store_channelController extends Controller
         $avg = Physical_store_channel::select('unit_price')->where('created_at', '>', Carbon::now()->subDays(7))->average('unit_price');
         $max_item = Physical_store_channel::all()->max('product_name');
 
-        return view('system.physicalStore')->with('item',$item)->with('avg',$avg)->with('items',count($items))->with('seven',count($seven))->with('max_item',$max_item);
+        return view('system.physicalStore')->with('item',$item)->with('avg',$avg)->with('items',count($items))
+        ->with('seven',count($seven))->with('max_item',$max_item);
         //print_r($item[1]['id']);
     }
     public function socialMediaView()
     {
-        return view('system.socialMedia');
+        $item = Physical_store_channel::where( 'created_at', '>', Carbon::now()->subDays(7))
+        ->get();
+
+        $items = Physical_store_channel::where('date_sold', '>=', date('y-m-d'))->get();
+        $seven = Physical_store_channel::where( 'date_sold', '>', Carbon::now()->subDays(7))->get();
+        $avg = Physical_store_channel::select('unit_price')->where('created_at', '>', Carbon::now()->subDays(7))->average('unit_price');
+        $max_item = Physical_store_channel::all()->max('product_name');
+
+        return view('system.socialMedia')->with('item',$item)->with('avg',$avg)
+        ->with('items',count($items))->with('seven',count($seven))->with('max_item',$max_item);
     }
     public function ecommerceView()
     {
-        return view('system.ecommerce');
+        $item = Physical_store_channel::where( 'created_at', '>', Carbon::now()->subDays(7))
+        ->get();
+
+        $items = Physical_store_channel::where('date_sold', '>=', date('y-m-d'))->get();
+        $seven = Physical_store_channel::where( 'date_sold', '>', Carbon::now()->subDays(7))->get();
+        $avg = Physical_store_channel::select('unit_price')->where('created_at', '>', Carbon::now()->subDays(7))->average('unit_price');
+        $max_item = Physical_store_channel::all()->max('product_name');
+
+        return view('system.ecommerce')->with('item',$item)->with('avg',$avg)
+        ->with('items',count($items))->with('seven',count($seven))->with('max_item',$max_item);
     }
 
     public function salesLogView()

@@ -11,7 +11,8 @@
     <h2>Last seven days sell {{$seven}}</h2>
     <h2>Best selling item {{$max_item}}</h2>
 
-    <a href="/system/sales/physical_store/sales_log"><button>Sales Log</button></a>
+    <a href="/system/sales/physical_store/sales_log"><button>Sales Log</button></a> <br> <br>
+    <a href="/home"><button>Back</button></a>
     <center>
         <h2>Last 7 days sells</h2>
         <table border="1">
