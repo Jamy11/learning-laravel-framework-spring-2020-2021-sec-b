@@ -37,9 +37,36 @@ Route::group(['middleware'=>'sess'],function(){
     Route::get('/uploadexcelview', 'Physical_store_channelController@uploadExcelView');
     Route::post('/uploadexcelview', 'Physical_store_channelController@uploadExcel');
 
-    Route::get('system/product_management/existing_products', 'productController@existingProductsView');
+
+
+    Route::get('/system/product_management/existing_products', 'productController@existingProductsView');
+
+    Route::get('/system/product_management/edit/existing_products/{id}','ProductController@exEdit')->name('product.exEdit');
+    Route::post('/system/product_management/edit/existing_products/{id}','ProductController@exUpdate');
+
+    Route::get('/system/product_management/delete/existing_products/{id}','ProductController@exDelete')->name('product.exDelete');
+    Route::post('/system/product_management/delete/existing_products/{id}','ProductController@exDestroy');
+    
+    Route::get('/system/product_management/details/existing_products/{id}','ProductController@exShow')->name('product.exShow');
+
+    
+    
     Route::get('system/product_management/upcoming_products', 'productController@upcomingProductsView');
+
+    Route::get('/system/product_management/edit/upcoming_products/{id}','ProductController@upEdit')->name('product.upEdit');
+    Route::post('/system/product_management/edit/upcoming_products/{id}','ProductController@upUpdate');
+
+    Route::get('/system/product_management/delete/upcoming_products/{id}','ProductController@upDelete')->name('product.upDelete');
+    Route::post('/system/product_management/delete/upcoming_products/{id}','ProductController@upDestroy');
+
+    Route::get('/system/product_management/details/upcoming_products/{id}','ProductController@upShow')->name('product.upShow');
+
+
+
     Route::get('system/product_management/add_product', 'productController@addProductView');
+
+    
+
     
     
     
