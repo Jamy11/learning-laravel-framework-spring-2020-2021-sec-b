@@ -43,6 +43,9 @@
 			</table>
 		</fieldset>
 	</form>
+    <br>
+    <br>
+    <a href="/home"><button>Back</button></a>
 
     <br><br>
         @foreach($errors->all() as $err)
