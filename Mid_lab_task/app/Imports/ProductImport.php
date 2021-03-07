@@ -15,19 +15,19 @@ class ProductImport implements ToModel
     public function model(array $row)
     {
         return new Physical_store_channel([
-            //
-            // 'Id' => $row[0],
-            // 'Coustomer Name'=> $row[1],
-            // 'Adress'=> $row[2],
-            // 'Phone'=> $row[3],
-            // 'product Id'=> $row[4],
-            // 'Product name'=> $row[5],
-            // 'Unit Price'=> $row[6],
-            // 'Quantity'=> $row[7],
-            // 'total Price'=> $row[8],
-            // 'Date Sold'=> $row[9],
-            // 'Payment Type'=> $row[10],
-            // 'Status'=> $row[11],
+            
+            //'Id' => $row[0],
+            'customer_name'=> $row[0],
+            'address'=> $row[1],
+            'phone'=> $row[2],
+            'product_id'=> $row[3],
+            'product_name'=> $row[4],
+            'unit_price'=> $row[5],
+            'quantity'=> $row[6],
+            'total_price'=> $row[7],
+            'date_sold'=> $row[8],
+            'payment_type'=> $row[9],
+            'status'=> $row[10],
             // 'Created At'=> $row[12],
             // 'Updated At'=> $row[13],
         ]);

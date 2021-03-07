@@ -10,9 +10,9 @@
         <br>
         <br>
         <br>
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="file" name='file'>
+            <input type="file" name='import'>
             <input type="submit" value="Submit">
         </form>
     </center>

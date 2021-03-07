@@ -29,7 +29,7 @@
             
                 @foreach ($data as $it)
                 <tr>
-                    <td>{{$it['']}}</td>
+                    <td>{{$it['id']}}</td>
                     <td>{{$it['customer_name']}}</td>
                     <td>{{$it['address']}}</td>
                     <td>{{$it['phone']}}</td>
@@ -55,5 +55,7 @@
         <a href="/downloadexcel"><button>Download as Excel</button></a>
         <a href="/uploadexcelview"><button>Upload Excel File</button></a>
     </center>
+
+    <h3 style="color: red">{{session('msg')}}</h3>
     
 @endsection

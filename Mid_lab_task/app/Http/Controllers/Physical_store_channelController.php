@@ -118,9 +118,10 @@ class Physical_store_channelController extends Controller
     }
     public function uploadExcel(Request $req)
     {
-        Excel::import(new ProductImport, storage_path('product.xlsx'));
-        //print_r($req->file);
+        Excel::import(new ProductImport, $req->file('import') );
         
+        $req->session()->flash('msg', 'Done');
+
         return redirect('/system/sales/physical_store/sales_log');
     }
 }
